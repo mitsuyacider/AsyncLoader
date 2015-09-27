@@ -18,7 +18,13 @@ AsyncLoader::AsyncLoader() {
     processId = 0;
     ofRegisterURLNotification(this);
     ofAddListener(ofURLResponseEvent(), this, &AsyncLoader::urlResponse);
-}
+    bgImage.loadImage("background.png");
+
+    glEnable(GL_BLEND);
+#ifndef TARGET_OPENGLES
+    glBlendEquation(GL_FUNC_ADD);
+#endif
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);}
 
 void AsyncLoader::load(string url) {
     requestName = "";
@@ -44,7 +50,6 @@ void AsyncLoader::urlResponse(ofHttpResponse &response) {
             
             // stock the list
             jsonData.parse(response.data.getText());
-            
             std::size_t length = jsonData["data"].size();
             
             if (length > 0) {
@@ -54,9 +59,8 @@ void AsyncLoader::urlResponse(ofHttpResponse &response) {
                 for (int i = 0; i < length; i++) {
                     std::string url = jsonData["data"][i]["images"]["standard_resolution"]["url"].asString();
                     url.erase(4, 1);
-                    printf("\nimage %s", url.c_str());
                     urlList.push_back(url);
-                    
+                    captionList.push_back(jsonData["data"][i]["caption"]["text"].asString());
                     // load image
                     // TODE: 既に保存してある画像はロードしないように修正する
                     ofLoadURLAsync(url, requestName);
@@ -75,9 +79,18 @@ void AsyncLoader::urlResponse(ofHttpResponse &response) {
             
             // 保存用の画像をバッファー内に描画する
             fff.begin();
-            ofClear(0, 0, 0, 0);
+            ofClear(0, 0, 0, 100);
             ofBackground(0);
-            iii.draw(0, 0);
+            bgImage.draw(0, 0);
+            iii.draw(38, 38);
+            // draw caption if exist
+            std::string caption = captionList[loadCnt];
+            if (caption != "") {
+                ofPushStyle();
+                ofSetColor(0);
+                ofDrawBitmapString(caption, ofPoint(767, 335));
+                ofPopStyle();
+            }
             fff.end();
             
             // バッファー内にあるピクセルデータを画像ファイルとして保存

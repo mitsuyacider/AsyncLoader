@@ -32,14 +32,14 @@ public:
     int processId;
     ofEvent<ofBuffer> LOAD_COMPLETE;
     ofEvent<void> LOAD_ERROR;
-    
+    ofImage bgImage;
 
 protected:
     ofxJSONElement jsonData;
     vector <std::string> urlList;
     int loadCnt;
     std::string requestName;
-
+    vector <std::string> captionList;
    // void notify(ofEvent<> event);
 };
 
