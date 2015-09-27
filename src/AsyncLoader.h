@@ -16,6 +16,7 @@
 
 #pragma once
 #include "ofMain.h"
+#include "ofxJSON.h"
 
 class AsyncLoader : public ofBaseApp {
 public:
@@ -24,9 +25,21 @@ public:
     
     void load(string url);
     void loadAsSavingFile(string url, string fileName);
+    void loadInstagramImage();
+    
+    
     void urlResponse(ofHttpResponse &response);
     int processId;
     ofEvent<ofBuffer> LOAD_COMPLETE;
     ofEvent<void> LOAD_ERROR;
+    
+
+protected:
+    ofxJSONElement jsonData;
+    vector <std::string> urlList;
+    int loadCnt;
+    std::string requestName;
+
+   // void notify(ofEvent<> event);
 };
 

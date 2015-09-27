@@ -12,6 +12,6 @@ class ofApp : public ofBaseApp {
     
         void loadComplete(ofBuffer &buffer);
         AsyncLoader loader;
-    ofImage image;
-    bool isLoaded;
+        ofImage image;
+        bool isLoaded;
 };

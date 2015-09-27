@@ -2,7 +2,8 @@
 
 void ofApp::setup(){
     ofAddListener(loader.LOAD_COMPLETE, this, &ofApp::loadComplete);
-    loader.load("http://www.openframeworks.cc/images/ofw-logo.png");
+//    loader.load("http://www.openframeworks.cc/images/ofw-logo.png");
+    loader.loadInstagramImage();
     isLoaded = false;
 }
 void ofApp::update(){
@@ -19,7 +20,7 @@ void ofApp::loadComplete(ofBuffer &buffer) {
     
     // command line sample
     std::stringstream cmd;
-    string word = "画像のロードが完了しました。ロードした画像を表示します。";
+    string word = "load complete";
     cmd << "say -v kyoko " << word;
     system(cmd.str().c_str());
 }
