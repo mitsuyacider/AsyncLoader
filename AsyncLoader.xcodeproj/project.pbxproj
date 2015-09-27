@@ -9,6 +9,47 @@
 		<string>46</string>
 		<key>objects</key>
 		<dict>
+			<key>355E9410DC62C739016F57E2</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>4D5F40369A318AD1914D066A</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>EF3054A21157DD79AE98C4AB</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>355E9410DC62C739016F57E2</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxTextBox</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>4D5F40369A318AD1914D066A</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxTextBox.h</string>
+				<key>path</key>
+				<string>../../../addons/ofxTextBox/src/ofxTextBox.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>22FDF81C4A468B788F424022</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -316,6 +357,7 @@
 				<array>
 					<string>2865DAEF86B1907A704CA70B</string>
 					<string>95D87FD7121C8B2D7D5F155C</string>
+					<string>EF3054A21157DD79AE98C4AB</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -708,9 +750,11 @@
 						<string>../../../addons/ofxJSON/libs/jsoncpp/include/json</string>
 						<string>../../../addons/ofxJSON/libs/jsoncpp/src</string>
 						<string>../../../addons/ofxJSON/src</string>
-						<string>src</string>
 						<string>../../../addons/ofxTrueTypeFontUC/libs</string>
 						<string>../../../addons/ofxTrueTypeFontUC/src</string>
+						<string>src</string>
+						<string>../../../addons/ofxTextBox/libs</string>
+						<string>../../../addons/ofxTextBox/src</string>
 					</array>
 					<key>ARCHS</key>
 					<string>$(NATIVE_ARCH)</string>
@@ -775,9 +819,11 @@
 						<string>../../../addons/ofxJSON/libs/jsoncpp/include/json</string>
 						<string>../../../addons/ofxJSON/libs/jsoncpp/src</string>
 						<string>../../../addons/ofxJSON/src</string>
-						<string>src</string>
 						<string>../../../addons/ofxTrueTypeFontUC/libs</string>
 						<string>../../../addons/ofxTrueTypeFontUC/src</string>
+						<string>src</string>
+						<string>../../../addons/ofxTextBox/libs</string>
+						<string>../../../addons/ofxTextBox/src</string>
 					</array>
 					<key>ARCHS</key>
 					<string>$(NATIVE_ARCH)</string>
